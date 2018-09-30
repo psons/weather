@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { weatherBit } from '../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {WeatherForecast} from '../models/weather-forecast';
 
 @Component({
   selector: 'app-weather-forecast-list',
@@ -10,7 +12,7 @@ export class WeatherForecastListComponent implements OnInit {
   weatherBitUrl: string;
   weatherForecasts: WeatherForecast[];
   searchText: string;
-  cityDetails: CityDetails;
+  // cityDetails: CityDetails;
   constructor(private http: HttpClient) {
     this.weatherForecasts = [];
     this.weatherBitUrl = ``;

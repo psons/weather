@@ -6,7 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./weather-forecast.component.css'],
 })
 export class WeatherForecastComponent implements OnInit {
+  @Input() weatherForecasts: any[];
   constructor() {
+    console.log('WEATHER FORECAST COMPONENT');
   }
 
   ngOnInit() {
