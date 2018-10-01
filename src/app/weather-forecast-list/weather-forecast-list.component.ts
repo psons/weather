@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { weatherBit } from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {WeatherForecast} from '../models/weather-forecast';
+import {CityDetails} from '../models/city-details';
 
 @Component({
   selector: 'app-weather-forecast-list',
@@ -10,19 +11,29 @@ import {WeatherForecast} from '../models/weather-forecast';
 })
 export class WeatherForecastListComponent implements OnInit {
   weatherBitUrl: string;
-  weatherForecasts: WeatherForecast[];
-  searchText: string;
-  // cityDetails: CityDetails;
+  @Input() searchText: any[];
+
+  // weatherForecasts: WeatherForecast[];
+  // searchText: string;
+  city: CityDetails;
   constructor(private http: HttpClient) {
-    this.weatherForecasts = [];
-    this.weatherBitUrl = ``;
+    // this.weatherForecasts = [];
+    // this.weatherBitUrl = ``;
+    this.city = new CityDetails("Chicago", "IL")
+    console.log('WEATHER FORECAST-LIST COMPONENT');
   }
 
   getWeather() {
+    console.log(`in app.component searchText: ${this.searchText}`);
     this.weatherBitUrl = `${weatherBit.urlBase}?city=${this.searchText}&key=${weatherBit.apiKey}`;
-    //subscribe to weatherbit forecase results here
+    // this.weatherBitUrl = `https://api.weatherbit.io/v2.0/forecast/daily?city=${this.searchText}&key=${weatherBit.apiKey}`;
+    this.http.get(this.weatherBitUrl).subscribe( (results: any) => {
+      console.log(results);
+      this.weatherForecasts = results['data'];
+      this.city.cityName = results['city_name'];
+      this.city.stateCode = results['state_code'];
+    });
   }
-
   ngOnInit() {
   }
 

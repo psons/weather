@@ -1,3 +1,9 @@
-<p>
-  weather-forecast-list works!
-</p>
+<div>  <button (click)="getWeather()">Get Weather</button>
+<div *ngFor="let forecast of weatherForecasts">
+
+  <div>
+    {{forecast.datetime}}
+    <span>Max Temp:</span>{{forecast.max_temp}}
+  </div>
+</div>
+</div>

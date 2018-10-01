@@ -2,11 +2,12 @@
   {{title}}
 </div>
 <h3>
-  {{cityDetails.cityName}}
-  {{cityDetails.stateCode}}
+  {{city.cityName}}
+  {{city.stateCode}}
+  <!--https://angular.io/api/forms/NgModel-->
   <input [(ngModel)]="searchText" />
   <span>{{searchText}}</span>
-  <button (click)="getWeather()">Get Weather</button>
 </h3>
-<app-weather-forecast [weatherForecasts]="weatherForecasts"></app-weather-forecast>
+<app-weather-forecast-list [searchText]="searchText">
+</app-weather-forecast-list>
 
