@@ -1,8 +1,18 @@
 
-<div *ngFor="let forecast of weatherForecasts">
-
-  <div>
-    {{forecast.datetime}}
-    <span>Max Temp:</span>{{forecast.max_temp}}
+<div class="forecast-container">
+    <div class="day">
+      <div>
+        {{weatherForecast.datetime}}
+      </div>
+      <div>
+        {{weatherForecast.description}}
+      </div>
+    </div>
+  <div class="max">
+    {{weatherForecast.max_temp}}
   </div>
+  <div class="min">
+    {{weatherForecast.min_temp}}
+  </div>
+
 </div>

@@ -1,0 +1,25 @@
+.forecast-container {
+  padding: .4em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5em;
+  grid-gap: .2em;
+  grid-template-areas:
+    "day-description high"
+    "day-description low";
+}
+
+.day {
+  background-color: lightgray;
+  grid-area: day-description;
+}
+
+.max {
+  background-color: lightpink;
+  grid-area: high;
+}
+
+.min {
+  background-color: lightskyblue;
+  grid-area: low;
+}

@@ -1,9 +1,10 @@
 <div>  <button (click)="getWeather()">Get Weather</button>
 <div *ngFor="let forecast of weatherForecasts">
+  <!--<div>-->
+    <!--loop in weather-forecast-list {{forecast | json}}-->
+  <!--</div>-->
 
-  <div>
-    {{forecast.datetime}}
-    <span>Max Temp:</span>{{forecast.max_temp}}
-  </div>
+  <app-weather-forecast [weatherForecast]=forecast>
+  </app-weather-forecast>
 </div>
 </div>

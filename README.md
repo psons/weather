@@ -16,7 +16,7 @@ working from class
 ###0. CREATE MODELS (Classes) WITH APPROPRIATE ATTRIBUTES FOR 
 x - CityDetails 
 
-d - WeatherForecast
+x - WeatherForecast
 
 ###1. MAKE SURE TO ADD WEATHERBIT API KEY TO environments/environment.ts
 x - done
@@ -31,6 +31,7 @@ x - class example passes weatherForcasts, not searchText
 x - mostly pasted in.
 
 ###5. ADD HTML TO THE weather-forecast.html TO DISPLAY A WEATHER FORECAST RESULT
+x - basic structure in place
 
-###6. ADD AN ITERATOR TO weather-forecast-list AND DISPLAY EACH WEATHER
-   FORECAST RESULT <app-weather-forecast>
+###6. ADD AN ITERATOR TO weather-forecast-list AND DISPLAY EACH WEATHER FORECAST RESULT <app-weather-forecast>
+x - does all 16 days.

@@ -13,11 +13,12 @@ export class WeatherForecastListComponent implements OnInit {
   weatherBitUrl: string;
   @Input() searchText: any[];
 
-  // weatherForecasts: WeatherForecast[];
+  // weatherForecasts: Array<string>;
+  weatherForecasts: Array<WeatherForecast>;
   // searchText: string;
   city: CityDetails;
   constructor(private http: HttpClient) {
-    // this.weatherForecasts = [];
+    this.weatherForecasts = [];
     // this.weatherBitUrl = ``;
     this.city = new CityDetails("Chicago", "IL")
     console.log('WEATHER FORECAST-LIST COMPONENT');
@@ -29,7 +30,10 @@ export class WeatherForecastListComponent implements OnInit {
     // this.weatherBitUrl = `https://api.weatherbit.io/v2.0/forecast/daily?city=${this.searchText}&key=${weatherBit.apiKey}`;
     this.http.get(this.weatherBitUrl).subscribe( (results: any) => {
       console.log(results);
-      this.weatherForecasts = results['data'];
+      // this.weatherForecasts = results['data']; // string version
+      this.weatherForecasts = results['data'].map(dayForecast => new WeatherForecast(dayForecast));
+      console.log(`WeatherForecastListComponent.getWeather() objects weatherForecasts:` +
+        this.weatherForecasts.map(dF => dF.asStr()));
       this.city.cityName = results['city_name'];
       this.city.stateCode = results['state_code'];
     });
