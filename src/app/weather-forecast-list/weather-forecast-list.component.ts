@@ -24,7 +24,7 @@ export class WeatherForecastListComponent implements OnInit {
     console.log('WEATHER FORECAST-LIST COMPONENT');
   }
 
-  getWeather() {
+getWeather() {
     console.log(`in app.component searchText: ${this.searchText}`);
     this.weatherBitUrl = `${weatherBit.urlBase}?city=${this.searchText}&key=${weatherBit.apiKey}`;
     // this.weatherBitUrl = `https://api.weatherbit.io/v2.0/forecast/daily?city=${this.searchText}&key=${weatherBit.apiKey}`;

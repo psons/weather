@@ -1,13 +1,19 @@
-<div>
-  {{title}}
-</div>
-<h3>
-  {{city.cityName}}
-  {{city.stateCode}}
-  <!--https://angular.io/api/forms/NgModel-->
-  <input [(ngModel)]="searchText" />
-  <span>{{searchText}}</span>
-</h3>
-<app-weather-forecast-list [searchText]="searchText">
-</app-weather-forecast-list>
+<div class="app-container">
+  <div class="controls">
+    <H2 class="heading">
+      {{title}}
+    </H2>
+    <h3 class="heading">
+      {{city.cityName}}
+      {{city.stateCode}}
+      <!--https://angular.io/api/forms/NgModel-->
+      <input [(ngModel)]="searchText" />
+      <span>{{searchText}}</span>
+    </h3>
 
+  </div>
+  <div class="list-container">
+    <app-weather-forecast-list [searchText]="searchText">
+    </app-weather-forecast-list>
+  </div>
+</div>

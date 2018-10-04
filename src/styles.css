@@ -1,1 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+
+.app-container {
+  width: 35em;
+  border: grey .1em solid;
+  border-radius: 2.5em;
+  display: grid;
+  grid-template-rows: 5em auto;
+
+}
+
+.heading {
+  text-align: center;
+  font-family: Arial;
+}
+
+
+.list-container {
+  padding: .5em;
+}
+
+
+.forecast-container {
+  padding: .5em 0 .5em 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: .2em;
+  grid-template-areas:
+    "day-description high"
+    "day-description low";
+}
+
+.clicker {
+  border-radius: 1em;
+  text-align: center;
+  padding: 1em;
+  background-color: lightgray;
+}
+
+.day {
+  /*border: 2px solid red;*/
+  padding: 1em;
+  border-radius: 1em 0 0 1em;
+  background-color: lightgray;
+  grid-area: day-description;
+}
+
+.max {
+  padding: 1em;
+  border-radius: 0 1em 0 0;
+  background-color: lightpink;
+  grid-area: high;
+}
+
+.min {
+  padding: 1em;
+  border-radius: 0 0 1em 0;
+  background-color: lightskyblue;
+  grid-area: low;
+}

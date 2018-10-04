@@ -8,9 +8,10 @@ import {WeatherForecast} from '../models/weather-forecast';
 })
 export class WeatherForecastComponent implements OnInit {
   @Input() weatherForecast: WeatherForecast;
+
   constructor() {
     console.log('WEATHER FORECAST COMPONENT');
-    console.trace();
+    // console.trace();
   }
 
   ngOnInit() {

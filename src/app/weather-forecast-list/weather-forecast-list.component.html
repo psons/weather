@@ -1,10 +1,7 @@
-<div>  <button (click)="getWeather()">Get Weather</button>
-<div *ngFor="let forecast of weatherForecasts">
-  <!--<div>-->
-    <!--loop in weather-forecast-list {{forecast | json}}-->
-  <!--</div>-->
-
-  <app-weather-forecast [weatherForecast]=forecast>
-  </app-weather-forecast>
-</div>
+<div class="list-container">
+  <div (click)="getWeather()" class="clicker">Get Weather</div>
+  <div *ngFor="let forecast of weatherForecasts">
+    <app-weather-forecast [weatherForecast]=forecast>
+    </app-weather-forecast>
+  </div>
 </div>
